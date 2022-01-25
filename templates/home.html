@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}all 3 project{% endblock %}</title>
+    <link rel="stylesheet" href=" {% static "home.css"%}? {% now "U" %} ">
+    {% block css %}{% endblock  %}
+</head>
+<body>
+    <header>
+        <div class="title"><a href=" {% url 'home' %}">all 3 small projects under a big project</a></div>
+        <nav>
+            <a href=" {% url 'wordcounter' %} " class="nav-link">word counter</a>
+            <a href=" {% url 'blog' %} " class="nav-link">blog</a>
+            <a href=" {% url 'producthunt' %} " class="nav-link">product hunt</a>
+            <a href=" {% url 'home' %}admin " class="nav-link">admin</a>
+            {% if user.is_authenticated %}
+            <a href=" {% url 'profile' %} " class="nav-link ml-auto">profile</a>
+            <form action=" {% url 'logout' %} " method='POST' style='display:inline-block' >
+                {% csrf_token %}
+                <input type="submit" value='logout' class='nav-link'>
+            </form>
+            {% else %}
+                <a href=" {% url 'login' %} " class="nav-link ml-auto">login</a>
+                <a href=" {% url 'signup' %} " class="nav-link">signup</a>
+            {% endif %}
+        </nav>
+    </header>
+
+    <main>
+        
+        {% block content %}
+            <div class="containerr">
+                <p class='speech'>This application is built for learning purposes. Now a days i am learning Django, so trying to build small applications to gain the working methods Django provides to make an application.</p>
+                <p class='speech'>I have merged 3 small applications into a big application to test my understandin of routing, file handling, view generating, and over all making a functional appliation.</p>
+            </div>
+        {% endblock %}
+
+    </main>
+
+
+    <footer>
+        all 3 projects
+    </footer>
+</body>
+</html>

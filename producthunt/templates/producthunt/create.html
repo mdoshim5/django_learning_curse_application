@@ -1,0 +1,29 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block title %}create product{% endblock  %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'producthunt/create.css' %}? {% now "U" %}">
+{% endblock  %}
+
+{% block content %}
+    <p>{{error}}</p>
+
+    <div class="container">
+        <form action="" method="POST" enctype='multipart/form-data'>
+            {% csrf_token %}
+            <h1>Create new product</h1>
+            <h3>Enter the title: </h3>
+            <input type="text" name='title'><br>
+            <h3>Enter the details: </h3>
+            <textarea name="body" cols="40" rows="6"></textarea><br>
+            <label>Icon</label>
+            <input type="file" name='icon'><br>
+            <label>Image</label>
+            <input type="file" name='image'><br>
+            <button class='nav-link'>Submit</button>
+        </form>
+    </div>
+
+{% endblock  %}

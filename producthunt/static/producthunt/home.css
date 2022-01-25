@@ -1,0 +1,28 @@
+.product img{
+    height: 200px;
+    width: auto;
+}
+.product{
+    display: flex;
+    background-color: rgb(212, 212, 241);
+    padding: 10px 20px;
+    margin: 5px auto;
+}
+.product-extra{
+    flex: 1;
+    /*background: #FDEBF7;*/
+    padding: 0 10px;
+    display: grid;
+}
+.hunter-date{
+    align-self: end;
+    display: flex;
+    justify-content: space-between;
+}
+.votes{
+    align-self: center;
+    padding: 10px;
+}
+.product-extra a{
+    color:black;
+}

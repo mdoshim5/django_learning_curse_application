@@ -1,0 +1,22 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block title %}wordcounter{% endblock  %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'wordcounter/home.css' %}? {% now "U" %}">
+{% endblock  %}
+
+{% block content %}
+
+<div class="container">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h1>Enter your text bellow</h1>
+        <textarea name="inputdata" id="inputdata" cols="40" rows="13"></textarea> <br>
+        <input class="nav-link" type="submit" value="submit">
+    </form>
+</div>
+
+
+{% endblock  %}

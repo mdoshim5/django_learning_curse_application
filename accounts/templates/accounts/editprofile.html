@@ -1,0 +1,30 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block title %}Edit-Profile{% endblock  %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'accounts/editprofile.css' %}? {% now "U" %}">
+{% endblock  %}
+
+{% block content %}
+
+<div class="container">
+    <div class="edit-profile">
+        <form action="" method='POST'>
+            {% csrf_token %}
+        <label>Username: {{ user.username }}</label><br>
+        <label>First name:</label>
+        <input name='firstname' type="text" value='{{user.first_name}}'> <br>
+        <label>Last name:</label>
+        <input name='lastname' type="text" value='{{user.last_name}}'> <br>
+        <label>Email:</label>
+        <input name='email' type="text" value='{{user.email}}'> <br>
+        <button class="nav-link">Submit</button>
+        </form>
+
+    </div>
+</div>
+
+
+{% endblock  %}

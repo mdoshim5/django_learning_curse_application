@@ -1,0 +1,23 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block title %}blog{% endblock  %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'blog/home.css' %}? {% now "U" %}">
+{% endblock  %}
+
+{% block content %}
+    <br>
+    <a href=" {% url 'blog' %}create " class='btn nav-link' >create new blog</a>
+    <br>
+    <div class="container">
+        {% for post in posts.all %}
+            <div class="post">
+                <img src="{{post.image.url}}" alt="post image" class='post-image'>
+                <h2 class="post-title">{{post.title}}</h2>
+                <p>{{post.summery}}...<span><a href="{% url 'blog' %}{{post.id}}">see more</a></span></p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock  %}

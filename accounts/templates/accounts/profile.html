@@ -1,0 +1,23 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block title %}Profile{% endblock  %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'accounts/profile.css' %}? {% now "U" %}">
+{% endblock  %}
+
+{% block content %}
+
+<div class="container">
+    <div class="profile-info">
+        <label>Username: {{ user.username }}</label><br>
+        <label>Firstname: {{ user.first_name }}</label><br>
+        <label>Lastname: {{ user.last_name }}</label><br>
+        <label>Email: {{ user.email }}</label><br>
+        <a href="{% url 'edit-profile' %}" class='nav-link' >Edit</a>
+    </div>
+</div>
+
+
+{% endblock  %}

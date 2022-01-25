@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+form{
+    border: 1px solid grey;
+    padding: 20px 50px;
+    box-shadow: 0 0 5px grey;
+    border-radius: 5px;
+}
+
+form h1{
+    font-size: 36px;
+    margin: 10px auto;
+}
+
+form h3{
+    font-size: 24px;
+    
+}
+form input{
+    font-size: 20px;
+    padding: 5px;
+    margin: 5px 0;
+}

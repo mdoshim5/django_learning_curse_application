@@ -1,0 +1,16 @@
+.detail-image{
+    width: 50%;
+    height: auto;
+}
+.container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.post{
+    margin: 20px auto;
+    padding: 20px 30px;
+}
+.post-title{
+    margin: 4px 0;
+}

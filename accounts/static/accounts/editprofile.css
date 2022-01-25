@@ -1,0 +1,19 @@
+.container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.edit-profile label{
+    margin: 15px 10px;
+    font-size: 25px;
+}
+
+.edit-profile input{
+    padding: 1px 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    margin: 2px;
+    border: 1px solid grey;
+}

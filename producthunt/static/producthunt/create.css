@@ -1,0 +1,9 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+.container input, .container textarea{
+    margin: 4px;
+    padding: 4px;
+    font-size: 18px;
+}

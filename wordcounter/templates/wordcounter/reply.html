@@ -1,0 +1,26 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block title %}wordcounter{% endblock  %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'wordcounter/home.css' %}? {% now "U" %}">
+{% endblock  %}
+
+{% block content %}
+
+<div class="container">
+    <a href="{% url 'home' %}wordcounter" class='nav-link'>Click to count again</a>
+    <h1>Your entered text: </h1>
+    <p>{{ inputdata }}</p>
+    <br>
+    <h1>total words: {{ totalwords}}</h1>
+    <h3>and the frequency is: </h3>
+    {% for key, value in frequency.items %}
+        <h3> {{key}} = {{value}} </h3>
+    {% endfor %}
+
+</div>
+
+
+{% endblock  %}

@@ -1,0 +1,26 @@
+.container{
+    margin: 30px auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+}
+.container textarea{
+    padding: 5px;
+    font-size: 18px;
+}
+
+.btn{
+    display: inline-block;
+    font-size: 18px;
+    padding: 4px 10px;
+    margin: 5px auto;
+    background: rgb(224, 42, 42);
+    border: none;
+    border-radius: 7px;
+}
+.btn:hover{
+    background-color: rgb(185, 32, 32);
+    cursor: pointer;
+    font-size: 20px;
+}

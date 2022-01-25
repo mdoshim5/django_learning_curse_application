@@ -1,0 +1,33 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block title %}producthunt{% endblock  %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'producthunt/home.css' %}? {% now "U" %}">
+{% endblock  %}
+
+{% block content %}
+    <a href="{% url 'producthunt' %}create" class="nav-link">create new</a>
+    <div class="products">
+        {% for product in products.all %}
+        
+            <div class="product">
+                <img src="{{product.icon.url}}" alt="product icon">
+                <div class="product-extra">
+                    <h1>{{product.title}}</h1>
+                    <p>{{product.body_summery}}...<a href="{% url 'producthunt' %}{{product.id}}">see more</a></p>
+                    <div class="hunter-date">
+                        <h3>Hunter: {{product.hunter.username}}</h3>
+                        <h3>{{product.publish_date_pretty}}</h3>
+                    </div>
+                </div>
+                <div class='votes'>total votes = {{product.votes_total}}</div>
+                
+                
+            </div>
+
+        {% endfor %}
+    </div>
+
+{% endblock  %}
